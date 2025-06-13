@@ -1,0 +1,72 @@
+# Test with valid CEP - São Paulo Centro
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "cep": "01310100"
+}
+
+###
+
+# Test with valid CEP - Rio de Janeiro Copacabana
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "cep": "22070900"
+}
+
+###
+
+# Test with valid CEP - Brasília
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "cep": "70040010"
+}
+
+###
+
+# Test with invalid CEP format (less than 8 digits)
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "cep": "12345"
+}
+
+###
+
+# Test with invalid CEP format (more than 8 digits)
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "cep": "123456789"
+}
+
+###
+
+# Test with invalid CEP format (contains letters)
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "cep": "1234567a"
+}
+
+###
+
+# Test with non-existent CEP
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "cep": "99999999"
+}
+
+###
+
+# Test with invalid HTTP method (GET instead of POST)
+GET http://localhost:8080
